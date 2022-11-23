@@ -28,7 +28,7 @@ def create_page():
     chunked_books = list(chunked(books, COLUMN_ON_PAGE))
     chunked_pages = list(chunked(chunked_books, BOOKS_ON_PAGE))
 
-    filepath_to_pages_directory = os.path.join("pages")
+    filepath_to_pages_directory = os.path.join("site_pages")
     os.makedirs(filepath_to_pages_directory, exist_ok=True)
 
     all_pages_number = math.ceil(len(chunked_books) / BOOKS_ON_PAGE)

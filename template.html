@@ -19,21 +19,21 @@
         <ul class="pagination mt-4">
           <li class="page-item {% if page_number==1 %}disabled{% endif %}">
             <a class="page-link"
-               href="../pages/index{{ page_number - 1 }}.html">Назад</a>
+               href="../site_pages/index{{ page_number - 1 }}.html">Назад</a>
           </li>
 
             {% for page in range(1,all_pages_number+1) %}
 
           <li class="page-item {% if page_number ==page %}active{%endif%}"><a
                   class="page-link"
-                  href="../pages/index{{page}}.html">{{page}}</a>
+                  href="../site_pages/index{{page}}.html">{{page}}</a>
           </li>
 
             {%endfor%}
 
           <li class="page-item {% if page_number==all_pages_number %}disabled{% endif %}">
             <a class="page-link"
-               href="../pages/index{{ page_number + 1 }}.html">Вперед</a>
+               href="../site_pages/index{{ page_number + 1 }}.html">Вперед</a>
           </li>
         </ul>
       </nav>
