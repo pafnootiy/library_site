@@ -13,7 +13,7 @@
 
 ### Превью сайта
 
-Ознакомиться с сайтом можно перейдя по  [ссылке](https://pafnootiy.github.io/libraries_site/pages/index1.html )
+Ознакомиться с сайтом можно перейдя по  [ссылке](https://pafnootiy.github.io/library_site/site_pages/index1.html )
 
 ### Цель проекта
 Код написан в образовательных целях на онлайн-курсе для веб-разработчиков Devman
