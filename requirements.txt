@@ -1,0 +1,4 @@
+Jinja2==2.11.2
+livereload==2.6.1
+more-itertools==8.2.0
+python-dotenv==0.21.0

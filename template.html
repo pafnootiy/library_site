@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href="../static/lg.png" rel=" icon" sizes="76x76">
+    <link href="../static/bootstrap.min.css"
+          rel="stylesheet">
+    <link href="../static/docs.css"
+          rel="stylesheet">
+    <title> Library Devman Project </title>
+    <script src="../static/bootstrap.bundle.min.js"></script>
+
+  </head>
+
+  <body>
+    <div class="container">
+      <nav aria-label="Page navigation example">
+        <ul class="pagination mt-4">
+          <li class="page-item {% if page_number==1 %}disabled{% endif %}">
+            <a class="page-link"
+               href="../pages/index{{ page_number - 1 }}.html">Назад</a>
+          </li>
+
+            {% for page in range(1,all_pages_number+1) %}
+
+          <li class="page-item {% if page_number ==page %}active{%endif%}"><a
+                  class="page-link"
+                  href="../pages/index{{page}}.html">{{page}}</a>
+          </li>
+
+            {%endfor%}
+
+          <li class="page-item {% if page_number==all_pages_number %}disabled{% endif %}">
+            <a class="page-link"
+               href="../pages/index{{ page_number + 1 }}.html">Вперед</a>
+          </li>
+        </ul>
+      </nav>
+
+        {% for book in books %}
+
+      <div class="row">
+        <div class="col-sm">
+          <img alt="{{book[0].title}}" class="col px-mb-0"
+               src="../images/{{book[0].src_img}}"
+               style="width: 200px; padding: 10px;float:left;"/>
+          <div class="card-body">
+            <h3 class="card-title">{{book[0].title}}</h3>
+            <p class="card-text">{{book[0].author}}</p>
+
+              {%for genre in book[0].genre %}
+
+            <h6><span
+                    class="badge badge-warning"
+                    style="font-size: 14px;  padding: 5px;flex-direction: column;"> {{genre}}</span>
+            </h6>
+
+              {%endfor%}
+
+            <a href="../books/{{book[1].book_id}}. {{book[1].title}}.txt" target='_blank'>Читать</a>
+          </div>
+        </div>
+
+        <div class="col-sm">
+          <img alt="{{book[1].title}}" class="col px-mb-0"
+               src="../images/{{book[1].src_img}}"
+               style="width: 200px; padding: 10px;float:left;"/>
+          <div class="card-body">
+            <h3 class="card-title">{{book[1].title}}</h3>
+            <p class="card-text">{{book[1].author}}</p>
+
+              {%for genre in book[1].genre %}
+
+            <h6><span
+                    class="badge badge-warning"
+                    style="font-size: 14px;  padding: 5px;flex-direction: column;"> {{genre}}</span>
+            </h6>
+              {%endfor%}
+
+            <a href="../books/{{book[1].book_id}}. {{book[1].title}}.txt" target='_blank'>Читать</a>
+          </div>
+        </div>
+      </div>
+
+        {% endfor %}
+
+    </div>
+  </body>
+</html>
