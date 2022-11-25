@@ -66,14 +66,14 @@
         </div>
 
         <div class="col-sm">
-          <img alt="{{book[0].title}}" class="col px-mb-0"
-               src="../images/{{book[0].src_img|urlencode}}"
+          <img alt="{{book[1].title}}" class="col px-mb-0"
+               src="../images/{{book[1].src_img|urlencode}}"
                style="width: 200px; padding: 10px;float:left;">
           <div class="card-body">
-            <h3 class="card-title">{{book[0].title}}</h3>
-            <p class="card-text">{{book[0].author}}</p>
+            <h3 class="card-title">{{book[1].title}}</h3>
+            <p class="card-text">{{book[1].author}}</p>
 
-              {%for genre in book[0].genre %}
+              {%for genre in book[1].genre %}
 
             <h6><span
                     class="badge badge-warning"
@@ -81,7 +81,7 @@
             </h6>
               {%endfor%}
 
-            <a href="../books/{{book[0].book_id|urlencode}}.{{book[0].title|urlencode}}.txt" target='_blank'>Читать</a>
+            <a href="../books/{{book[1].book_id|urlencode}}.{{book[1].title|urlencode}}.txt" target='_blank'>Читать</a>
           </div>
         </div>
       </div>
