@@ -8,7 +8,7 @@ from livereload import Server
 from more_itertools import chunked
 
 COLUMN_ON_PAGE = 2
-BOOKS_ON_PAGE = 20
+BOOKS_IN_COLUMN = 20
 
 
 def get_books_data_from_json():
@@ -26,12 +26,12 @@ def create_page():
     )
 
     chunked_books = list(chunked(books, COLUMN_ON_PAGE))
-    chunked_pages = list(chunked(chunked_books, BOOKS_ON_PAGE))
+    chunked_pages = list(chunked(chunked_books, BOOKS_IN_COLUMN))
 
     filepath_to_pages_directory = os.path.join("site_pages")
     os.makedirs(filepath_to_pages_directory, exist_ok=True)
 
-    all_pages_number = math.ceil(len(chunked_books) / BOOKS_ON_PAGE)
+    all_pages_number = math.ceil(len(chunked_books) / BOOKS_IN_COLUMN)
 
     for index_number, chunked_pages in enumerate(chunked_pages, 1):
         html_filepath = os.path.join(filepath_to_pages_directory,
